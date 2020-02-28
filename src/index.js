@@ -3,49 +3,34 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
-function formatDate(date) {
-  return date.toLocaleDateString();
-}
+// function Clock(props) {
+//   return (
+//     <div>
+//       <h1>Hello, world!</h1>
+//       <h2>It is {props.date.toLocaleTimeString()}.</h2>
+//     </div>
+//   );
+// }
 
-function Avatar(props) {
-  return (
-    <img className="Avatar" src={props.user.avatarUrl} alt={props.user.name} />
-  );
-}
+// function tick() {
+//   ReactDOM.render(<Clock date={new Date()} />, document.getElementById("root"));
+// }
 
-function UserInfo(props) {
-  return (
-    <div className="UserInfo">
-      <Avatar user={props.user} />
-      <div className="UserInfo-name">{props.user.name}</div>
-    </div>
-  );
-}
+// setInterval(tick, 1000);
 
-function Comment(props) {
-  return (
-    <div className="Comment">
-      <UserInfo user={props.author} />
-      <div className="Comment-text">{props.text}</div>
-      <div className="Comment-date">{formatDate(props.date)}</div>
-    </div>
-  );
-}
+// Convert a function to Class ( ES6 )
 
-const comment = {
-  date: new Date(),
-  text: "I hope you enjoy learning React!",
-  author: {
-    name: "Hello Kitty",
-    avatarUrl: "https://placekitten.com/g/64/64"
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
   }
-};
-ReactDOM.render(
-  <Comment date={comment.date} text={comment.text} author={comment.author} />,
-  document.getElementById("root")
-);
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+ReactDOM.render(<Clock date={new Date()} />, document.getElementById("root"));
+
 serviceWorker.unregister();
