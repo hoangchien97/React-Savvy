@@ -3,17 +3,24 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
-const name = "Hoang Chien";
-function fullName(user) {
-  return user.firstName + " " + user.lastName;
-}
+// These two examples are identical:
 
-const user1 = {
-  firstName: "Chien",
-  lastName: "Hoang"
-};
+const element = <h1 className="greeting">Hello, world!</h1>;
 
-const element = <h1>Hello, {fullName(user1)} !</h1>;
+// const element = React.createElement(
+//   "h1",
+//   { className: "greeting" },
+//   "Hello, world!"
+// );
+
+// Note: this structure is simplified
+// const element = {
+//   type: 'h1',
+//   props: {
+//     className: 'greeting',
+//     children: 'Hello, world!'
+//   }
+// };
 
 ReactDOM.render(element, document.getElementById("root"));
 
