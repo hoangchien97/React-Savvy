@@ -4,7 +4,16 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 const name = "Hoang Chien";
-const element = <h1>Hello, {name}</h1>;
+function fullName(user) {
+  return user.firstName + " " + user.lastName;
+}
+
+const user1 = {
+  firstName: "Chien",
+  lastName: "Hoang"
+};
+
+const element = <h1>Hello, {fullName(user1)} !</h1>;
 
 ReactDOM.render(element, document.getElementById("root"));
 
