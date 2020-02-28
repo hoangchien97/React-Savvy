@@ -3,34 +3,26 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
-// function Clock(props) {
-//   return (
-//     <div>
-//       <h1>Hello, world!</h1>
-//       <h2>It is {props.date.toLocaleTimeString()}.</h2>
-//     </div>
-//   );
-// }
+// 1, Replace this.props.date with this.state.date in the render() method:
+// 2, Add a class constructor that assigns the initial this.state:
+// 3, Remove the date prop from the <Clock /> element:
 
-// function tick() {
-//   ReactDOM.render(<Clock date={new Date()} />, document.getElementById("root"));
-// }
-
-// setInterval(tick, 1000);
-
-// Convert a function to Class ( ES6 )
 
 class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
   render() {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }
 }
 
-ReactDOM.render(<Clock date={new Date()} />, document.getElementById("root"));
+ReactDOM.render(<Clock />, document.getElementById("root"));
 
 serviceWorker.unregister();
