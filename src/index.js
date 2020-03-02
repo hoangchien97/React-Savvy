@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import FavouriteFlavor from "./FavouriteFlavor";
+import Calculator from "./Calculator";
 
-ReactDOM.render(<FavouriteFlavor />, document.getElementById("root"));
+ReactDOM.render(<Calculator />, document.getElementById("root"));
 
 serviceWorker.unregister();
