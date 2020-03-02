@@ -4,6 +4,10 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Page from "./Page";
 
-ReactDOM.render(<Page />, document.getElementById("root"));
+const numbers = [1, 2, 3, 4, 5];
+
+const listItems = numbers.map(number => <li>{number * 2}</li>);
+
+ReactDOM.render(<ul> {listItems}</ul>, document.getElementById("root"));
 
 serviceWorker.unregister();
