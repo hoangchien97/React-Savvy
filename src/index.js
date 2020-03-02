@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Clock from "./Clock";
+import Toggle from "./Toggle";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<Clock />, document.getElementById("root"));
+ReactDOM.render(<Toggle />, document.getElementById("root"));
 
 serviceWorker.unregister();
