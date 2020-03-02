@@ -2,12 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import Page from "./Page";
+
+function ItemNumber(props) {
+  return <li>{props.value}</li>;
+}
+
+function ListItems(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map(number => (
+    <ItemNumber key={number.toString()} value={number} />
+  ));
+  return <ul>{listItems}</ul>;
+}
 
 const numbers = [1, 2, 3, 4, 5];
-
-const listItems = numbers.map(number => <li>{number * 2}</li>);
-
-ReactDOM.render(<ul> {listItems}</ul>, document.getElementById("root"));
+ReactDOM.render(
+  <ListItems numbers={numbers} />,
+  document.getElementById("root")
+);
 
 serviceWorker.unregister();
