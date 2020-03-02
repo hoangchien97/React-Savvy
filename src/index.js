@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import FormName from "./FormName";
+import FavouriteFlavor from "./FavouriteFlavor";
 
-ReactDOM.render(<FormName />, document.getElementById("root"));
+ReactDOM.render(<FavouriteFlavor />, document.getElementById("root"));
 
 serviceWorker.unregister();
