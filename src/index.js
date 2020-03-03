@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import CustomTextInput from "./CustomTextInput";
+import Blur from "./Blue";
 
-ReactDOM.render(<CustomTextInput />, document.getElementById("root"));
+ReactDOM.render(<Blur />, document.getElementById("root"));
 
 serviceWorker.unregister();
